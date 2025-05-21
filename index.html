@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerolos Fathy | Senior Cost Control Engineer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --dark-blue: #1a2e44;
+            --accent-color: #3498db;
+            --light-bg: #f9f9f9;
+            --medium-bg: #e9ecef;
+            --text-color: #333;
+            --white: #fff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+        
+        .bg-dark-blue {
+            background-color: var(--dark-blue);
+        }
+        
+        .text-accent {
+            color: var(--accent-color);
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26,46,68,0.9) 0%, rgba(52,152,219,0.8) 100%);
+            position: relative;
+        }
+        
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--white);
+            width: 90%;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            background-color: rgba(255,255,255,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .experience-item, .project-item, .education-item {
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .experience-item:hover, .project-item:hover, .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .company-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            margin-right: 15px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .company-icon i {
+            font-size: 28px;
+        }
+        
+        .date-range {
+            font-size: 0.9rem;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 30px;
+            background-color: var(--medium-bg);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 25px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -34px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 3px solid var(--white);
+        }
+        
+        .project-card {
+            height: 200px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card-icon {
+            font-size: 64px;
+            position: absolute;
+            opacity: 0.3;
+        }
+        
+        .project-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            z-index: 2;
+            padding: 0 15px;
+        }
+        
+        .footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 50px 0;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .progress-container {
+            margin-bottom: 20px;
+        }
+        
+        .progress-title {
+            margin-bottom: 8px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .progress {
+            height: 8px;
+            background-color: var(--medium-bg);
+            border-radius: 20px;
+        }
+        
+        .progress-bar {
+            background-color: var(--accent-color);
+            border-radius: 20px;
+        }
+        
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 9999;
+        }
+        
+        #back-to-top.show {
+            opacity: 1;
+        }
+        
+        .certification-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: var(--medium-bg);
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .certification-badge:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .certification-badge i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                height: 100vh;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark-blue fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">KF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home" class="d-flex align-items-center">
+        <div class="header-content">
+            <div class="profile-img">
+                <img src="your-photo-url.jpg" alt="Kerolos Fathy">
+            </div>
+            <h1 class="display-4 fw-bold mb-2">Kerolos Fathy Aziz</h1>
+            <h2 class="h4 mb-4">Senior Cost Control Engineer | PMP® | PRMG®</h2>
+            <p class="lead mb-5">7+ years of experience in construction with expertise in Quantity Surveying and Cost Control</p>
+            <a href="#contact" class="btn btn-light btn-lg px-4 me-2">Contact Me</a>
+            <a href="#about" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="lead">I am a Civil Engineer with over 7 years of experience in the construction field, specialized in Commercial, Quantity Surveying and Cost Control.</p>
+                    <p>Skilled in AutoCAD, Quantity Surveying (AutoCAD & Revit), Plan Swift, Revit Structure, Microsoft Excel, Pre-Contract, Post Contract, Invoices, Tendering, BOQ, Cost Control, Contracts, Variation Orders, Technical Office, Concrete Works, Finishing Works, MEP Background, Structural Shop drawing, ASD, and Site Reliability Engineering.</p>
+                    <p>I have worked on different types of projects such as Commercial, Industrial, Residential, Hospitality, Infrastructure and Landscape Projects.</p>
+                    <div class="mt-4">
+                        <h4>Certifications</h4>
+                        <div class="mt-3">
+                            <span class="certification-badge">
+                                <i class="fas fa-certificate"></i> Project Management Professional (PMP)®
+                            </span>
+                            <span class="certification-badge">
+                                <i class="fas fa-certificate"></i> Professional Program in Project Management (PRMG)
+                            </span>
+                            <span class="certification-badge">
+                                <i class="fas fa-certificate"></i> Cost Control Workshop (CCW)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Personal Information</h4>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-accent fa-fw fa-lg me-3"></i>
+                                </div>
+                                <div>
+                                    <strong>Location:</strong> Saudi Arabia
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-envelope text-accent fa-fw fa-lg me-3"></i>
+                                </div>
+                                <div>
+                                    <strong>Email:</strong> kerolosfathy2016@gmail.com
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-phone text-accent fa-fw fa-lg me-3"></i>
+                                </div>
+                                <div>
+                                    <strong>Phone:</strong> +966 561 581 035
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class="fab fa-linkedin text-accent fa-fw fa-lg me-3"></i>
+                                </div>
+                                <div>
+                                    <strong>LinkedIn:</strong> linkedin.com/in/kerolos-fathy-pmp®-prmg®-268210153
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-language text-accent fa-fw fa-lg me-3"></i>
+                                </div>
+                                <div>
+                                    <strong>Languages:</strong> Arabic (Native), English (Proficient)
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-id-card text-accent fa-fw fa-lg me-3"></i>
+                                </div>
+                                <div>
+                                    <strong>Licenses:</strong> Saudi Arabia Driving License, Member of Saudi Council of Engineers (SCE), Member of Egyptian Syndicate of Engineers
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="experience-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Senior Commercial & Quantity Surveyor Engineer</h4>
+                                <h5 class="text-accent">Hassan Allam Holding Saudi Arabia</h5>
+                                <span class="date-range"><i class="far fa-calendar-alt"></i> September 2023 - Present</span>
+                                <span class="ms-3"><i class="fas fa-map-marker-alt"></i> Saudi Arabia</span>
+                            </div>
+                        </div>
+                        <p>Rawabi Holding Joint Venture With Hassan Allam Construction</p>
+                        <strong>AMAALA | Triple Bay | Red Sea Global Projects:</strong>
+                        <ul>
+                            <li>Four Seasons Resort</li>
+                            <li>Six Senses Resort</li>
+                            <li>Rosewood Resort</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="experience-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Senior Commercial & Quantity Surveyor Engineer</h4>
+                                <h5 class="text-accent">Hassan Allam Holding</h5>
+                                <span class="date-range"><i class="far fa-calendar-alt"></i> October 2022 - August 2023</span>
+                                <span class="ms-3"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
+                            </div>
+                        </div>
+                        <p>East Cairo Logistics Park Project (Flex Park Project)</p>
+                        <strong>Project Consisted of:</strong>
+                        <ul>
+                            <li>6 Warehouses</li>
+                            <li>Admin Building</li>
+                            <li>Infrastructure & Landscape</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="experience-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Technical Office Engineer - Quantity Surveyor</h4>
+                                <h5 class="text-accent">Rowad Modern Engineering</h5>
+                                <span class="date-range"><i class="far fa-calendar-alt"></i> August 2021 - September 2022</span>
+                                <span class="ms-3"><i class="fas fa-map-marker-alt"></i> New Mansoura, Egypt</span>
+                            </div>
+                        </div>
+                        <p>New Mansoura Medicine University Building Project</p>
+                        <p>Building With Area (10,000 M²) - Fully Finished Project (Concrete & Finishing & MEP Works)</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="experience-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Technical Office Engineer - Quantity Surveyor</h4>
+                                <h5 class="text-accent">El Hazek Construction</h5>
+                                <span class="date-range"><i class="far fa-calendar-alt"></i> January 2021 - July 2021</span>
+                                <span class="ms-3"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
+                            </div>
+                        </div>
+                        <p>New Giza Buildings Project</p>
+                        <p>Fully Finished Project (12 Buildings - Concrete & Finishing & MEP Works)</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="experience-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Technical Office Engineer</h4>
+                                <h5 class="text-accent">National Construction Company (NCC)</h5>
+                                <span class="date-range"><i class="far fa-calendar-alt"></i> September 2017 - December 2020</span>
+                                <span class="ms-3"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
+                            </div>
+                        </div>
+                        <strong>Projects:</strong>
+                        <ul>
+                            <li>EL_Sewedy Cables New Administrative Building Project</li>
+                            <li>Precast Concrete Manholes For ELDABAA NPP PROJECT - PIONEER BASE</li>
+                            <li>Nor EL_Alam Hospital Project</li>
+                            <li>Sadko Project</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="experience-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Internship Trainee</h4>
+                                <h5 class="text-accent">Orascom Construction</h5>
+                                <span class="date-range"><i class="far fa-calendar-alt"></i> September 2016</span>
+                                <span class="ms-3"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
+                            </div>
+                        </div>
+                        <p>AT ERC Project - Summer Training Program</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="experience-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Internship Trainee</h4>
+                                <h5 class="text-accent">Orascom Construction</h5>
+                                <span class="date-range"><i class="far fa-calendar-alt"></i> August 2016</span>
+                                <span class="ms-3"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
+                            </div>
+                        </div>
+                        <p>At El Kattameya Hospital (Finishes Works) - Summer Training Program</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Featured Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-item h-100">
+                        <div class="project-card">
+                            <i class="fas fa-building project-card-icon"></i>
+                            <div class="project-card-title">AMAALA | Triple Bay | Red Sea Global</div>
+                        </div>
+                        <h4>AMAALA | Triple Bay | Red Sea Global</h4>
+                        <span class="badge bg-dark-blue mb-3">Saudi Arabia</span>
+                        <p>Working on multiple luxury resorts including:</p>
+                        <ul>
+                            <li>Four Seasons Resort</li>
+                            <li>Six Senses Resort</li>
+                            <li>Rosewood Resort</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-item h-100">
+                        <div class="project-card">
+                            <i class="fas fa-warehouse project-card-icon"></i>
+                            <div class="project-card-title">East Cairo Logistic Park (Flex Park)</div>
+                        </div>
+                        <h4>East Cairo Logistic Park (Flex Park)</h4>
+                        <span class="badge bg-dark-blue mb-3">Cairo, Egypt</span>
+                        <p>A comprehensive logistics development project consisting of:</p>
+                        <ul>
+                            <li>6 Warehouses</li>
+                            <li>Admin Building</li>
+                            <li>Infrastructure & Landscape Works</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-item h-100">
+                        <div class="project-card">
+                            <i class="fas fa-university project-card-icon"></i>
+                            <div class="project-card-title">New Mansoura Medicine University Building</div>
+                        </div>
+                        <h4>New Mansoura Medicine University Building</h4>
+                        <span class="badge bg-dark-blue mb-3">Egypt</span>
+                        <p>Building with an area of 10,000 M². Fully finished project including:</p>
+                        <ul>
+                            <li>Concrete Works</li>
+                            <li>Finishing Works</li>
+                            <li>MEP Works</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-item h-100">
+                        <div class="project-card">
+                            <i class="fas fa-home project-card-icon"></i>
+                            <div class="project-card-title">NEW GIZA BUILDINGS</div>
+                        </div>
+                        <h4>NEW GIZA BUILDINGS</h4>
+                        <span class="badge bg-dark-blue mb-3">Egypt</span>
+                        <p>Fully finished residential project consisting of 12 buildings with:</p>
+                        <ul>
+                            <li>Concrete Works</li>
+                            <li>Finishing Works</li>
+                            <li>MEP Works</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-item h-100">
+                        <div class="project-card">
+                            <i class="fas fa-city project-card-icon"></i>
+                            <div class="project-card-title">El Sewedy Cables Administrative Building</div>
+                        </div>
+                        <h4>El Sewedy Cables Administrative Building</h4>
+                        <span class="badge bg-dark-blue mb-3">Egypt</span>
+                        <p>Fully finished corporate building project including:</p>
+                        <ul>
+                            <li>Concrete Works</li>
+                            <li>Finishing Works</li>
+                            <li>MEP Works</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-item h-100">
+                        <div class="project-card">
+                            <i class="fas fa-hospital project-card-icon"></i>
+                            <div class="project-card-title">Nor EL-Alam Hospital</div>
+                        </div>
+                        <h4>Nor EL-Alam Hospital</h4>
+                        <span class="badge bg-dark-blue mb-3">Cairo, Egypt</span>
+                        <p>Healthcare facility project with concrete works for a building with an area of 2,000 m².</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Education & Certifications</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="education-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-university fa-2x text-accent"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h4 class="mb-1">Diploma of The Professional Program in Project Management (PRMG)</h4>
+                                <h5 class="text-accent">American University in Cairo (AUC)</h5>
+                                <span class="date-range"><i class="far fa-calendar-alt"></i> June 2020 - May 2021</span>
+                                <span class="ms-3 badge bg-success">Grade: Excellent</span>
+                            </div>
+                        </div>
+                        <p>Key subjects studied:</p>
+                        <ul>
+                            <li>Project Budgeting and Financial Control</li>
+                            <li>Project Planning and Control Techniques</li>
+                            <li>Project Bids and Contracts</li>
+                            <li>Management of Project Resources</li>
+                            <li>Project Management Life Cycle From Tendering To Closing</li>
+                            <li>Risk Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="education-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-graduation-cap fa-2x text-accent"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h4 class="mb-1">Bachelor of Civil Engineering</h4>
+                                <h5 class="text-accent">Zagazig University</h5>
+                                <span class="date-range"><i class="far fa-calendar-alt"></i> September 2012 - July 2017</span>
+                                <span class="ms-3 badge bg-success">Grade: Very Good with Honors</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Professional Certifications</h4>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-certificate fa-2x text-accent"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h5 class="mb-1">Project Management Professional (PMP)®</h5>
+                                            <p class="mb-0">Project Management Institute</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-certificate fa-2x text-accent"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h5 class="mb-1">The Professional Program in Project Management (PRMG)</h5>
+                                            <p class="mb-0">American University in Cairo (AUC)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-certificate fa-2x text-accent"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h5 class="mb-1">Cost Control Workshop (CCW)</h5>
+                                            <p class="mb-0">HA Management Academy</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Professional Skills</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="mb-4">Technical Skills</h4>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Quantity Surveying & Takeoff</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Cost Control & Management</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Contract Management</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Variation Orders & Claims</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Project Management</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Risk Assessment</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h4 class="mb-4">Software & Tools</h4>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Microsoft Excel</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>AutoCAD 2D</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Revit Structure</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Plan Swift</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Microsoft Office</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-title">
+                            <span>Primavera P6</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 mt-5">
+                    <h4 class="mb-4">Key Competencies</h4>
+                    <div class="text-center">
+                        <span class="skill-tag">Quantity Surveying</span>
+                        <span class="skill-tag">Quantity Takeoff</span>
+                        <span class="skill-tag">Payments</span>
+                        <span class="skill-tag">Subcontractors Management</span>
+                        <span class="skill-tag">Commercial Awareness</span>
+                        <span class="skill-tag">Contract Management</span>
+                        <span class="skill-tag">Variation Orders</span>
+                        <span class="skill-tag">Tendering</span>
+                        <span class="skill-tag">Fit-out</span>
+                        <span class="skill-tag">Pre-Contract</span>
+                        <span class="skill-tag">Post-Contract</span>
+                        <span class="skill-tag">Cost Management</span>
+                        <span class="skill-tag">Cost Control</span>
+                        <span class="skill-tag">Estimation</span>
+                        <span class="skill-tag">Earned Value Management</span>
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Risk Assessment</span>
+                        <span class="skill-tag">Project Analysis</span>
+                        <span class="skill-tag">MEP Background</span>
+                        <span class="skill-tag">Material Procurement</span>
+                        <span class="skill-tag">Presentation</span>
+                        <span class="skill-tag">Continuous Improvement</span>
+                        <span class="skill-tag">Negotiation</span>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Team Work</span>
+                        <span class="skill-tag">Communication Skills</span>
+                        <span class="skill-tag">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Contact Information</h4>
+                            <div class="contact-info">
+                                <div class="d-flex mb-3">
+                                    <i class="fas fa-map-marker-alt fa-fw fa-lg mt-1"></i>
+                                    <div class="ms-3">
+                                        <h5>Location</h5>
+                                        <p>Saudi Arabia</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <i class="fas fa-envelope fa-fw fa-lg mt-1"></i>
+                                    <div class="ms-3">
+                                        <h5>Email</h5>
+                                        <p>kerolosfathy2016@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <i class="fas fa-phone fa-fw fa-lg mt-1"></i>
+                                    <div class="ms-3">
+                                        <h5>Phone</h5>
+                                        <p>+966 561 581 035</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <i class="fab fa-linkedin fa-fw fa-lg mt-1"></i>
+                                    <div class="ms-3">
+                                        <h5>LinkedIn</h5>
+                                        <p>linkedin.com/in/kerolos-fathy-pmp®-prmg®-268210153</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h5 class="mb-3">Connect With Me</h5>
+                            <div class="social-links">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 mt-4 mt-lg-0">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Send Me a Message</h4>
+                            <form id="contactForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="name" class="form-label">Your Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email" class="form-label">Your Email</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="subject" class="form-label">Subject</label>
+                                            <input type="text" class="form-control" id="subject" placeholder="Enter subject">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="message" class="form-label">Message</label>
+                                            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary px-4 py-2">
+                                            <i class="fas fa-paper-plane me-2"></i>Send Message
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h4 class="mb-4">Kerolos Fathy Aziz</h4>
+                    <p>Senior Cost Control Engineer with 7+ years of experience in construction field, specialized in Quantity Surveying and Cost Control for various types of projects including Commercial, Industrial, Residential, Hospitality, Infrastructure and Landscape.</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>About</a></li>
+                        <li class="mb-2"><a href="#experience" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>Experience</a></li>
+                        <li class="mb-2"><a href="#projects" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>Projects</a></li>
+                        <li class="mb-2"><a href="#skills" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>Skills</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-4">Connect With Me</h5>
+                    <div class="social-links mb-4">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <p><i class="fas fa-envelope me-2"></i> kerolosfathy2016@gmail.com</p>
+                    <p><i class="fas fa-phone me-2"></i> +966 561 581 035</p>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Kerolos Fathy Aziz. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for navbar links
+            $('a.nav-link, a.navbar-brand, a.btn, footer a').on('click', function(event) {
+                if (this.hash !== '') {
+                    event.preventDefault();
+                    const hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 70
+                    }, 800);
+                }
+            });
+            
+            // Active nav item on scroll
+            $(window).scroll(function() {
+                var scrollDistance = $(window).scrollTop() + 100;
+                
+                // Show/hide back to top button
+                if (scrollDistance > 300) {
+                    $('#back-to-top').addClass('show');
+                } else {
+                    $('#back-to-top').removeClass('show');
+                }
+                
+                // Highlight navigation based on scroll position
+                $('section').each(function(i) {
+                    if ($(this).position().top <= scrollDistance) {
+                        $('.navbar-nav .nav-item .nav-link.active').removeClass('active');
+                        $('.navbar-nav .nav-item .nav-link').eq(i).addClass('active');
+                    }
+                });
+            });
+            
+            // Back to top button click event
+            $('#back-to-top').click(function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+                return false;
+            });
+            
+            // Form submission (for demo purposes only)
+            $('#contactForm').submit(function(e) {
+                e.preventDefault();
+                
+                // Show alert (for demo)
+                alert('Thank you for your message! This form is not functional in this demo, but would be connected to a backend service in a real-world implementation.');
+                
+                // Reset form
+                this.reset();
+            });
+            
+            // Animate progress bars on scroll
+            function animateProgressBars() {
+                $('.progress-bar').each(function() {
+                    const width = $(this).attr('aria-valuenow') + '%';
+                    $(this).css('width', 0);
+                    $(this).animate({ width: width }, 1000);
+                });
+            }
+            
+            // Initial trigger
+            animateProgressBars();
+            
+            // Collapse navbar on item click on mobile
+            $('.navbar-nav>li>a').on('click', function(){
+                $('.navbar-collapse').collapse('hide');
+            });
+            
+            // Add hover effect to certification badges
+            $('.certification-badge').hover(
+                function() {
+                    $(this).addClass('bg-accent text-white');
+                },
+                function() {
+                    $(this).removeClass('bg-accent text-white');
+                }
+            );
+        });
+    </script>
+</body>
+</html>
